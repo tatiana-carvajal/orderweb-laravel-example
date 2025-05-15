@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-USE APP\Models\Role;
+
+use App\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,9 +14,8 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         Role::insert([
-            ['name' => 'ASMINISTRADOR'],
+            ['name' => 'ADMINISTRADOR'],
             ['name' => 'SUPERVISOR']
-
         ]);
     }
 }

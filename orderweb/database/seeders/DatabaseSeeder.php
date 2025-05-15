@@ -15,35 +15,37 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       $this->call(CausalSeeder::class);
-       $this->call(ObservationSeeder::class);
-       $this->call(TypeActivitySeeder::class);
+        $this ->call(RoleSeeder::class);
+        $this ->call(CausalSeeder::class);
+        $this ->call(ObservationSeeder::class);
+        $this ->call(TypeActivitySeeder::class);
 
-       //crear 1 usuario de rol admin
-       User::factory()->create([
+        //crear 1 usuario de rol administrador
+        User::factory()->create([
             'role_id' => 1
-       ]);
-       
+        ]);
 
-        //crear 3 usuarios de rol super
-       User::factory()->create([
+        //crear 3 usuarios de rol supervisor
+        User::factory(3)->create([
             'role_id' => 2
-       ]);
+        ]);
 
+        //tecnicos
+        Technician::factory(2)->create([
+            'speciality' => 'Instalacion de redes'
+        ]);
 
-       //tecnicos
-       Technician::factory(2)->create([
-        'speciality' => 'Instalacion de redes',
-       ]);
-          
-       Technician::factory(2)->create([
-        'speciality' => 'Construcion de redes',
-       ]);
-       Technician::factory(1)->create([
-        'speciality' => 'Lectura de redes',
-       ]);
+        Technician::factory(2)->create([
+            'speciality' => 'Construcción'
+        ]);
 
-       Technician::factpry(1)->create();//tenico sin especialidad
-       
+        Technician::factory(1)->create([
+            'speciality' => 'Lectura de redes'
+        ]);
+
+        //técnico sin especialidad
+        Technician::factory(1)->create(); 
+
+        $this -> call(ActivitySeeder::class);
     }
 }

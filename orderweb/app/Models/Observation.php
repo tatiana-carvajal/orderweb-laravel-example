@@ -9,5 +9,8 @@ class Observation extends Model
 {
     use HasFactory;
 
-    protected $table = "obsevation";
+    protected $table = 'observation';
+    protected $fillable = [
+        'description',
+    ];
 }

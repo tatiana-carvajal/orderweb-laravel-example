@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use App\Models\Causal;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,14 +14,11 @@ class CausalSeeder extends Seeder
     public function run(): void
     {
         Causal::insert([
-            ['description' => 'REPARACION CONTADOR'],
-            ['description' => 'SUSPENCION DEL SERVICION'],
-            ['description' => 'RECONEXCION DEL SERVICIO'],
-            ['description' => 'INSTALACION DEL SERVICIO'],
-            ['description' => 'CAMBIO DEL SERVICIO'],
-            
-
-
+            ['description' => 'Reparacion contador'],
+            ['description' => 'Suspencion del servicio'],
+            ['description' => 'Reconexión del servicio'],
+            ['description' => 'Instalación del contador'],
+            ['description' => 'Cambio del contador']
         ]);
     }
 }

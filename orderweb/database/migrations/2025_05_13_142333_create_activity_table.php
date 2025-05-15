@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('activity', function (Blueprint $table) {
             $table->id();
-            $table-> string('description', 100)->comment('descrpcion');
-            $table-> integer('hours')->comment('horas de duracion');
-            $table->foreignId('technician_id')->constrained('technician')
-                                                ->onDelete('cascade')->onUpdate('cascade')->comment('id del tecnico');
+            $table->string('description', 100)->comment('descripcion');
+            $table->integer('hours')->comment('horas de duración');
+            $table->foreignId('technician_id')->constrained('technician')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('type_activity_id')->constrained('type_activity')->onDelete('cascade')->onUpdate('cascade');;
             $table->timestamps();
         });
     }
