@@ -17,4 +17,18 @@ class Order extends Model
         'observation_id',
         'causal_id'
     ];
+
+
+    public function causal(){
+        return $this->belongsTo(Causal::class, 'causal_id');
+    }
+
+     public function observation(){
+        return $this->belongsTo(observation::class, 'observation_id');
+    }
+
+    public function activities(){
+        return $this ->belongsTo(Activity::class);
+
+    }
 }
