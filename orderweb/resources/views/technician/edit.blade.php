@@ -2,6 +2,7 @@
 @section('title', 'Editar tecnico')
 @section('header', 'Editar tecnico')
 @section('content')
+@include ('templates.messages')
 
 <div class="row">
     <div class="col-lg-12 mb-4">
@@ -10,17 +11,17 @@
             <div class="row form-group">
                 <div class="col-lg-6 mb-4">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" name="name" id="name" required>
+                    <input type="text" class="form-control" name="name" id="name" required  value ="{{ old('name') }}">
                 </div>
                 <div class="col-lg-6 mb-4">
                     <label for="document">Documento</label>
-                    <input type="number" class="form-control" name="document" id="document" required>
+                    <input type="number" class="form-control" name="document" id="document" required value ="{{ old('document') }}">
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-6 mb-4">
                     <label for="phone">Teléfono</label>
-                    <input type="text" class="form-control" name="phone" id="phone" required>
+                    <input type="text" class="form-control" name="phone" id="phone" required  value ="{{ old('telefono') }}">
                 </div>
                 <div class="col-lg-6 mb-4">
                     <label for="speciality">Especialidad</label>

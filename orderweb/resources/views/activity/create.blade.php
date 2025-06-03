@@ -2,6 +2,7 @@
 @section('title', 'Crear actividad')
 @section('header', 'Crear actividad')
 @section('content')
+    @include ('templates.messages')
 
 <div class="row">
     <div class="col-lg-12 mb-4">
@@ -10,11 +11,11 @@
             <div class="row form-group">
                 <div class="col-lg-6 mb-4">
                     <label for="description">Descripción</label>
-                    <input type="text" class="form-control" name="description" id="description" required>
+                    <input type="text" class="form-control" name="description" id="description" required value ="{{ old('description') }}">
                 </div>
                 <div class="col-lg-6 mb-4">
                     <label for="hours">Horas</label>
-                    <input type="number" class="form-control" name="hours" id="hours" required>
+                    <input type="number" class="form-control" name="hours" id="hours" requiredvalue ="{{ old('hours') }}">
                 </div>
             </div>
             <div class="row form-group">
@@ -22,12 +23,22 @@
                     <label for="technician_id">Técnico</label>
                     <select name="technician_id" id="technician_id" class="form-control">
                         <option value="">Seleccione</option>
+                        @foreach ($technicians as $technician)
+                            <option value = "{{ $technician['id'] }}"
+                            @if (old ('technician_id')==$technician['id']) selected @endif>
+                            </option>
+>                        @endforeach
                     </select>
                 </div>
                 <div class="col-lg-6 mb-4">
                     <label for="type_activity_id">Tipo</label>
                     <select name="type_activity_id" id="type_activity_id" class="form-control">
                         <option value="">Seleccione</option>
+                        @foreach ($types as $type)
+                            <option value = "{{ $type['id'] }}"
+                            @if (old ('technician_id')==$type['id']) selected @endif>
+                        </option>
+                         @endforeach
                     </select>
                 </div>
             </div>

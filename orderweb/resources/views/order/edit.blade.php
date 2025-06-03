@@ -2,7 +2,7 @@
 @section('title', 'Edit órden')
 @section('header', 'Edit órden')
 @section('content')
-@include('templates/messages')
+    @include('templates/messages')
 
 <div class="row">
     <div class="col-lg-12 mb-4">
